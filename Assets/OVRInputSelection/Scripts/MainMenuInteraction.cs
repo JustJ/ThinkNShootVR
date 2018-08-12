@@ -23,16 +23,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenuInteraction : MonoBehaviour {
-    public void OnLoadUI() {
-        SceneManager.LoadScene("selection_ui", LoadSceneMode.Single);
+    public void OnLoadThinkAndShoot() {
+        SceneManager.LoadScene("Selection_ThinkAndShoot", LoadSceneMode.Single);
     }
-    public void OnLoadRaw() {
-        SceneManager.LoadScene("selection_raw", LoadSceneMode.Single);
+    public void OnLoadCircledTargets()
+    {
+        SceneManager.LoadScene("Selection_CircledTargets", LoadSceneMode.Single);
     }
-    public void OnLoadEvent() {
-        SceneManager.LoadScene("selection_physics", LoadSceneMode.Single);
-    }
-    public void OnLoadAllInOne() {
-        SceneManager.LoadScene("selection_all", LoadSceneMode.Single);
+    public void OnLoadThinkAndShoot2()
+    {
+        SceneManager.LoadScene("Selection_ThinkAndShoot2", LoadSceneMode.Single);
     }
 }
