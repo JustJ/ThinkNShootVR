@@ -22,22 +22,24 @@ public class ColliderTrigger : MonoBehaviour {
 		
 	}
 
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "TrueObjectPrefab")
+        if (collision.gameObject.name == "TrueObjectPrefab(Clone)")
         {
             score += truePoints;
-            UIOverlay.GetComponentInChildren<Text>().text = "Счёт:" + score.ToString();
+            Destroy(collision.gameObject);
         }
-        else if (collision.gameObject.name == "ObstacleObjectPrefab")
+        else if (collision.gameObject.name == "ObstacleObjectPrefab(Clone)")
         {
             score += obstaclePoints;
-            UIOverlay.GetComponentInChildren<Text>().text = "Счёт:" + score.ToString();
+            Destroy(collision.gameObject);
         }
-        else if (collision.gameObject.name == "FalseObjectPrefab")
+        else if (collision.gameObject.name == "FalseObjectPrefab(Clone)")
         {
             score += falsePoints;
-            UIOverlay.GetComponentInChildren<Text>().text = "Счёт:" + score.ToString();
+            Destroy(collision.gameObject);
         }
+
+        UIOverlay.GetComponentInChildren<Text>().text = "Счёт: " + score.ToString();
     }
 }

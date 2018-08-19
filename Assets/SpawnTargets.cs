@@ -32,9 +32,12 @@ public class SpawnTargets : MonoBehaviour {
 
         distanceTravelled += Vector3.Distance(transform.position, lastPosition);
         lastPosition = transform.position;
-        if (distanceTravelled > 5)
+        if (distanceTravelled > 7)
         {
-            Destroy(lastObjectSpawned);
+            if (lastObjectSpawned)
+            {
+                Destroy(lastObjectSpawned);
+            }
             lastObjectSpawned = generateNextObject();
             distanceTravelled = 0;
         }
