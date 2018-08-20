@@ -11,7 +11,7 @@ public class ColliderTrigger : MonoBehaviour {
     public int obstaclePoints = -30;
 
     int score = 0;
-
+    bool stop = false;
     // Use this for initialization
     void Start () {
 		
@@ -19,8 +19,16 @@ public class ColliderTrigger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (!stop)
+        {
+            transform.Translate(GameObject.Find("CenterEyeAnchor").transform.forward * Time.deltaTime);
+        }
+        else
+        {
+            UIOverlay.GetComponentInChildren<Text>().text = "Игра завершена. Счёт: " + score.ToString();
+        }
+        
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -38,6 +46,11 @@ public class ColliderTrigger : MonoBehaviour {
         {
             score += falsePoints;
             Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.name == "EndLvlPrefab(Clone)")
+        {
+            Destroy(collision.gameObject);
+            stop = true;
         }
 
         UIOverlay.GetComponentInChildren<Text>().text = "Счёт: " + score.ToString();

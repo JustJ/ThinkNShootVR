@@ -5,21 +5,14 @@ using UnityEngine.UI;
 
 public class SpawnTargets : MonoBehaviour {
 
-    public GameObject UIOverlay;
-
     public GameObject trueObject;
     public GameObject falseObject;
     public GameObject obstacleObject;
 
-    //public int truePoints = 10;
-    //public int falsePoints = -10;
-    //public int obstaclePoints = -30;
-
     float distanceTravelled = 0;
     Vector3 lastPosition;
     GameObject lastObjectSpawned;
-
-    int score = 0;
+    List<GameObject> gameObjects;
 
     // Use this for initialization
     void Start () {
@@ -42,26 +35,6 @@ public class SpawnTargets : MonoBehaviour {
             distanceTravelled = 0;
         }
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.name == "TrueObjectPrefab")
-    //    {
-    //        score += truePoints;
-    //        UIOverlay.GetComponentInChildren<Text>().text = "Счёт:" + score.ToString();
-    //    }
-    //    else if (collision.gameObject.name == "ObstacleObjectPrefab")
-    //    {
-    //        score += obstaclePoints;
-    //        UIOverlay.GetComponentInChildren<Text>().text = "Счёт:" + score.ToString();
-    //    }
-    //    else if (collision.gameObject.name == "FalseObjectPrefab")
-    //    {
-    //        score += falsePoints;
-    //        UIOverlay.GetComponentInChildren<Text>().text = "Счёт:" + score.ToString();
-    //    }
-    //}
-
 
     float obstacleProb = 0.2f;
     float trueObjProb = 0.4f;
