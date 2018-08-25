@@ -9,8 +9,8 @@ public class ColliderTrigger : MonoBehaviour {
     public int truePoints = 10;
     public int falsePoints = -10;
     public int obstaclePoints = -30;
-    public int trueTextPoints = 10;
-    public int falseTextPoints = -10;
+    public int trueTextPoints = 100;
+    public int falseTextPoints = -200;
     public int speed = 5;
 
     int score = 0;
@@ -20,8 +20,24 @@ public class ColliderTrigger : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
+    public void addFalseTextScore()
+    {
+        score += falseTextPoints;
+        showScore();
+    }
+
+    public void addTrueTextScore()
+    {
+        score += trueTextPoints;
+        showScore();
+    }
+
+    void showScore()
+    {
+        UIOverlay.GetComponentInChildren<Text>().text = "Счёт: " + score.ToString();
+    }
+    // Update is called once per frame
+    void Update () {
         if (!stop)
         {
             transform.Translate(speed * GameObject.Find("CenterEyeAnchor").transform.forward * Time.deltaTime);
@@ -66,6 +82,6 @@ public class ColliderTrigger : MonoBehaviour {
             Destroy(collision.gameObject);
         }
 
-        UIOverlay.GetComponentInChildren<Text>().text = "Счёт: " + score.ToString();
+        showScore();
     }
 }
