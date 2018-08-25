@@ -86,6 +86,7 @@ public class GenerateTextObjects : MonoBehaviour {
         lastGenPos = curPos;
         GameObject ret = Instantiate(obj, curPos, Quaternion.identity);
         ret.transform.rotation = Random.rotation;
+        ret.SetActive(true);
         return ret;
     }
 }
