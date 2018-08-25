@@ -11,6 +11,7 @@ public class ColliderTrigger : MonoBehaviour {
     public int obstaclePoints = -30;
     public int trueTextPoints = 10;
     public int falseTextPoints = -10;
+    public int speed = 3;
 
     int score = 0;
     bool stop = false;
@@ -23,7 +24,7 @@ public class ColliderTrigger : MonoBehaviour {
 	void Update () {
         if (!stop)
         {
-            transform.Translate(GameObject.Find("CenterEyeAnchor").transform.forward * Time.deltaTime);
+            transform.Translate(speed * GameObject.Find("CenterEyeAnchor").transform.forward * Time.deltaTime);
         }
         else
         {
