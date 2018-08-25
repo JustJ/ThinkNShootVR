@@ -9,6 +9,8 @@ public class ColliderTrigger : MonoBehaviour {
     public int truePoints = 10;
     public int falsePoints = -10;
     public int obstaclePoints = -30;
+    public int trueTextPoints = 10;
+    public int falseTextPoints = -10;
 
     int score = 0;
     bool stop = false;
@@ -51,6 +53,16 @@ public class ColliderTrigger : MonoBehaviour {
         {
             Destroy(collision.gameObject);
             stop = true;
+        }
+        else if (collision.gameObject.name == "TrueTextObjectPrefab(Clone)")
+        {
+            score += trueTextPoints;
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.name == "FalseTextObjectPrefab(Clone)")
+        {
+            score += falseTextPoints;
+            Destroy(collision.gameObject);
         }
 
         UIOverlay.GetComponentInChildren<Text>().text = "Счёт: " + score.ToString();
