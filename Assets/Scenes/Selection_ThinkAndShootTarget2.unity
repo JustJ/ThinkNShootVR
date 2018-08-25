@@ -988,7 +988,7 @@ RectTransform:
   m_GameObject: {fileID: 1093007139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_Children:
   - {fileID: 1937518135}
   m_Father: {fileID: 0}
@@ -1690,7 +1690,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1959080339}
-  - component: {fileID: 1959080340}
   - component: {fileID: 1959080341}
   - component: {fileID: 1959080342}
   m_Layer: 0
@@ -1713,38 +1712,13 @@ Transform:
   m_Father: {fileID: 1928684588}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1959080340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1959080338}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb3b7da63438f1e42a61135b266635c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  trueObjectPref: {fileID: 1532670099127986, guid: 8b575cb050d13d548a6e9c0ac1da27e7,
-    type: 2}
-  falseObjectPref: {fileID: 1514616517498080, guid: 850891161781d7e4a9c66270ea90bca3,
-    type: 2}
-  obstacleObjectPref: {fileID: 1167575555739010, guid: 0b79187ffc12e2546a5abdcae9baf65a,
-    type: 2}
-  endLvlObjectPref: {fileID: 1323000690080824, guid: 4e92132f338d2ea40954efe726719a5f,
-    type: 2}
-  genAreaHeight: 2.2
-  genAreaWidth: 2.2
-  maxObjectsToEndLevel: 3
-  obstacleProb: 0.2
-  trueObjProb: 0.4
-  falseObjProb: 0.4
 --- !u!114 &1959080341
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1959080338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0b7b351cacc1d0a49a40994b5def1602, type: 3}
   m_Name: 
@@ -1776,6 +1750,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trueObjectPref: {fileID: 1093007139}
   falseObjectPref: {fileID: 2082706138}
+  testObjectPref: {fileID: 1794237000389402, guid: 7e22aaa39d56aa943abd50b3834e41a7,
+    type: 2}
   trueSource: {fileID: 4900000, guid: a6a2c0ab70fb44f47844f7d2f5b8c6a4, type: 3}
   falseSource: {fileID: 4900000, guid: fbcada15054416546ac4e7905569821c, type: 3}
   genAreaHeight: 20
@@ -1866,7 +1842,7 @@ RectTransform:
   m_GameObject: {fileID: 2082706138}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_Children:
   - {fileID: 1320321681}
   m_Father: {fileID: 0}
