@@ -62,7 +62,7 @@ public class GenerateTextObjects : MonoBehaviour {
                 spawnedObject = generateObject(trueObjectPref);
                 //spawnedObject.GetComponentInChildren<TextMeshProUGUI>().text = trueStrings[0];
 
-                trueStrings.Remove(trueStrings[0]);
+                //trueStrings.Remove(trueStrings[0]);
             }
 
         }
@@ -72,7 +72,7 @@ public class GenerateTextObjects : MonoBehaviour {
                 spawnedObject = generateObject(falseObjectPref);
                 //spawnedObject.GetComponentInChildren<TextMeshProUGUI>().text = falseStrings[0];
 
-                falseStrings.Remove(falseStrings[0]);
+                //falseStrings.Remove(falseStrings[0]);
             }
         }
 
