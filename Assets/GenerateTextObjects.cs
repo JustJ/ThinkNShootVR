@@ -31,14 +31,14 @@ public class GenerateTextObjects : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        Encoding windows1251 = Encoding.GetEncoding(1251);
+        Encoding unicode = Encoding.GetEncoding(65001);
 
         lastGenPos = new Vector3(0, 0, 0);
         trueStrings = new List<string>();
         falseStrings = new List<string>();
 
-        trueStrings.AddRange(Regex.Split(windows1251.GetString(trueSource.bytes), "\r\n|\r|\n"));
-        falseStrings.AddRange(Regex.Split(windows1251.GetString(falseSource.bytes), "\r\n|\r|\n"));
+        trueStrings.AddRange(Regex.Split(unicode.GetString(trueSource.bytes), "\r\n|\r|\n"));
+        falseStrings.AddRange(Regex.Split(unicode.GetString(falseSource.bytes), "\r\n|\r|\n"));
 
         for (int i = 0; i < maxObjects; i++)
         {
@@ -61,10 +61,9 @@ public class GenerateTextObjects : MonoBehaviour {
             if (trueStrings.Count != 0)
             {
                 spawnedObject = generateObject(trueObjectPref);
-                generateObject(testObjectPref); 
-                //spawnedObject.GetComponentInChildren<TextMeshProUGUI>().text = trueStrings[0];
+                spawnedObject.GetComponentInChildren<TextMeshProUGUI>().text = trueStrings[0];
 
-                //trueStrings.Remove(trueStrings[0]);
+                trueStrings.Remove(trueStrings[0]);
             }
 
         }
@@ -72,10 +71,9 @@ public class GenerateTextObjects : MonoBehaviour {
             if (falseStrings.Count != 0)
             {
                 spawnedObject = generateObject(falseObjectPref);
-                generateObject(testObjectPref);
-                //spawnedObject.GetComponentInChildren<TextMeshProUGUI>().text = falseStrings[0];
+                spawnedObject.GetComponentInChildren<TextMeshProUGUI>().text = falseStrings[0];
 
-                //falseStrings.Remove(falseStrings[0]);
+                falseStrings.Remove(falseStrings[0]);
             }
         }
 

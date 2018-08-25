@@ -11,7 +11,7 @@ public class ColliderTrigger : MonoBehaviour {
     public int obstaclePoints = -30;
     public int trueTextPoints = 10;
     public int falseTextPoints = -10;
-    public int speed = 3;
+    public int speed = 5;
 
     int score = 0;
     bool stop = false;
