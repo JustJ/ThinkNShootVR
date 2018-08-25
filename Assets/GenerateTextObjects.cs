@@ -36,9 +36,8 @@ public class GenerateTextObjects : MonoBehaviour {
         trueStrings = new List<string>();
         falseStrings = new List<string>();
 
-        string[] test = Regex.Split(windows1251.GetString(trueSource.bytes), "\r\n|\r|\n");
-        trueStrings.AddRange(Regex.Split(windows1251.GetString(trueSource.bytes), "\r\n|\r|\n"));
-        falseStrings.AddRange(Regex.Split(windows1251.GetString(falseSource.bytes), "\r\n|\r|\n"));
+        //trueStrings.AddRange(Regex.Split(windows1251.GetString(trueSource.bytes), "\r\n|\r|\n"));
+        //falseStrings.AddRange(Regex.Split(windows1251.GetString(falseSource.bytes), "\r\n|\r|\n"));
 
         for (int i = 0; i < maxObjects; i++)
         {
@@ -61,7 +60,7 @@ public class GenerateTextObjects : MonoBehaviour {
             if (trueStrings.Count != 0)
             {
                 spawnedObject = generateObject(trueObjectPref);
-                spawnedObject.GetComponentInChildren<TextMeshProUGUI>().text = trueStrings[0];
+                //spawnedObject.GetComponentInChildren<TextMeshProUGUI>().text = trueStrings[0];
 
                 trueStrings.Remove(trueStrings[0]);
             }
@@ -71,7 +70,7 @@ public class GenerateTextObjects : MonoBehaviour {
             if (falseStrings.Count != 0)
             {
                 spawnedObject = generateObject(falseObjectPref);
-                spawnedObject.GetComponentInChildren<TextMeshProUGUI>().text = falseStrings[0];
+                //spawnedObject.GetComponentInChildren<TextMeshProUGUI>().text = falseStrings[0];
 
                 falseStrings.Remove(falseStrings[0]);
             }
