@@ -24,7 +24,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuInteraction : MonoBehaviour {
     public void OnLoadThinkAndShoot() {
-        SceneManager.LoadScene("Selection_ThinkAndShoot", LoadSceneMode.Single);
+        SceneManager.LoadScene("Selection_ThinkAndShootTarget", LoadSceneMode.Single);
     }
     public void OnLoadCircledTargets()
     {
@@ -32,6 +32,6 @@ public class MainMenuInteraction : MonoBehaviour {
     }
     public void OnLoadThinkAndShoot2()
     {
-        SceneManager.LoadScene("Selection_ThinkAndShoot2", LoadSceneMode.Single);
+        SceneManager.LoadScene("Selection_ThinkAndShootTarget2", LoadSceneMode.Single);
     }
 }

@@ -13,7 +13,7 @@ public class GenerateObjects : MonoBehaviour {
     public float genAreaHeight = 2.2f;
     public float genAreaWidth = 2.2f;
 
-    public int maxObjectsToEndLevel = 10;
+    public int maxObjectsToEndLevel = 100;
 
     Vector3 lastGenPos;
     // Use this for initialization
@@ -50,7 +50,7 @@ public class GenerateObjects : MonoBehaviour {
     
     GameObject generateObject(GameObject obj)
     {
-        Vector3 curPos = new Vector3(Random.Range(-genAreaWidth, genAreaWidth), Random.Range(-genAreaHeight, genAreaHeight), lastGenPos.z + Random.Range(2, 5));
+        Vector3 curPos = new Vector3(Random.Range(-genAreaWidth, genAreaWidth), Random.Range(-genAreaHeight, genAreaHeight), lastGenPos.z + Random.Range(8, 14));
         lastGenPos = curPos;
         return Instantiate(obj, curPos, Quaternion.identity);
     }

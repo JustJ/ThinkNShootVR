@@ -7,8 +7,7 @@ public class GenerateObjectsToSphere : MonoBehaviour {
     public GameObject trueObjectPref;
     public GameObject falseObjectPref;
     public GameObject obstacleObjectPref;
-
-    public GameObject endLvlObjectPref;
+	public GameObject endLvlObjectPref;
 
     public float genAreaHeight = 2.2f;
     public float genAreaWidth = 2.2f;

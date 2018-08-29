@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.32396823, g: 0.31913096, b: 0.3263253, a: 1}
+  m_IndirectSpecularColor: {r: 0.3208441, g: 0.3208319, b: 0.32092616, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -583,8 +583,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\u0421\u0446\u0435\u043D\u0430 1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 9901f7ce39d88b846913b3ee23e4534e, type: 2}
-  m_sharedMaterial: {fileID: 21886298835935430, guid: 9901f7ce39d88b846913b3ee23e4534e,
+  m_fontAsset: {fileID: 11400000, guid: a46b9ebd75f361340adfef2a3a0aac7c, type: 2}
+  m_sharedMaterial: {fileID: 21261405140301794, guid: a46b9ebd75f361340adfef2a3a0aac7c,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -657,7 +657,7 @@ MonoBehaviour:
     linkCount: 0
     lineCount: 1
     pageCount: 1
-    materialCount: 2
+    materialCount: 1
   m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -705,7 +705,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 21886298835935430, guid: 9901f7ce39d88b846913b3ee23e4534e, type: 2}
+  - {fileID: 21261405140301794, guid: a46b9ebd75f361340adfef2a3a0aac7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
