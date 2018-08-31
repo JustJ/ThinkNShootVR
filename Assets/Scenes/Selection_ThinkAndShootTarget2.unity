@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07187745, g: 0.050615177, b: 0.03407483, a: 1}
+  m_IndirectSpecularColor: {r: 0.07264053, g: 0.050922588, b: 0.034447245, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1068,6 +1068,7 @@ GameObject:
   - component: {fileID: 1093007142}
   - component: {fileID: 1093007141}
   - component: {fileID: 1093007140}
+  - component: {fileID: 1093007144}
   m_Layer: 5
   m_Name: TrueTextButton
   m_TagString: Untagged
@@ -1151,6 +1152,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1093007144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093007139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a083cf01309155846adc6ca820e975aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookTarget: {fileID: 8152057}
 --- !u!1 &1113491276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,6 +2348,7 @@ GameObject:
   - component: {fileID: 2082706141}
   - component: {fileID: 2082706140}
   - component: {fileID: 2082706139}
+  - component: {fileID: 2082706143}
   m_Layer: 5
   m_Name: FalseTextButton
   m_TagString: Untagged
@@ -2418,3 +2432,15 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 400, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2082706143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2082706138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a083cf01309155846adc6ca820e975aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookTarget: {fileID: 8152057}
