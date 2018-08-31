@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
+
 
 public class ColliderTrigger : MonoBehaviour {
 
@@ -12,6 +14,10 @@ public class ColliderTrigger : MonoBehaviour {
     public int trueTextPoints = 100;
     public int falseTextPoints = -200;
     public int speed = 5;
+
+    public int pointsToActivateExit = 200;
+
+    public float lvlTime = 60;
 
     int score = 0;
     bool stop = false;
@@ -34,13 +40,51 @@ public class ColliderTrigger : MonoBehaviour {
 
     void showScore()
     {
-        UIOverlay.GetComponentInChildren<Text>().text = "Счёт: " + score.ToString();
+        UIOverlay.GetComponentInChildren<Text>().text = "Время: " + lvlTime.ToString("N2") +"сек. " + "Счёт: " + score.ToString();
     }
+
+    void checkScore()
+    {
+        if (score >= pointsToActivateExit)
+        {
+            MeshRenderer mr = GameObject.Find("/EndLvlPrefab(Clone)").GetComponent<MeshRenderer>();
+            Material[] mats = mr.materials;
+            mats[0] = (Material)AssetDatabase.LoadAssetAtPath("Assets/Resources/Materials/EndLvlMatActive.mat", typeof(Material));
+            mr.materials = mats;
+        }
+        else
+        {
+            MeshRenderer mr = GameObject.Find("/EndLvlPrefab(Clone)").GetComponent<MeshRenderer>();
+            Material[] mats = mr.materials;
+            mats[0] = (Material)AssetDatabase.LoadAssetAtPath("Assets/Resources/Materials/EndLvlMatInactive.mat", typeof(Material));
+            mr.materials = mats;
+        }
+    }
+
+    void endTimerTick()
+    {
+        lvlTime -= Time.deltaTime;
+
+        if (lvlTime < 0)
+        {
+            stop = true;
+        }
+    }
+
+    void moveForward()
+    {
+        transform.Translate(speed * GameObject.Find("CenterEyeAnchor").transform.forward * Time.deltaTime);
+    }
+
     // Update is called once per frame
     void Update () {
+
         if (!stop)
         {
-            transform.Translate(speed * GameObject.Find("CenterEyeAnchor").transform.forward * Time.deltaTime);
+            moveForward();
+            endTimerTick();
+            checkScore();
+            showScore();
         }
         else
         {
@@ -68,8 +112,11 @@ public class ColliderTrigger : MonoBehaviour {
         }
         else if (collision.gameObject.name == "EndLvlPrefab(Clone)")
         {
-            Destroy(collision.gameObject);
-            stop = true;
+            if (score >= pointsToActivateExit)
+            {
+                Destroy(collision.gameObject);
+                stop = true;
+            }
         }
         else if (collision.gameObject.name == "TrueTextObjectPrefab(Clone)")
         {

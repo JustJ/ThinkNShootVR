@@ -24,7 +24,6 @@ public class GenerateObjectsToSphere : MonoBehaviour {
         {
             generateNextObject();
         }
-
         generateObject(endLvlObjectPref);
     }
 

@@ -14,9 +14,18 @@ public class LookAtScript : MonoBehaviour {
 	void Update () {
 		if(lookTarget != null)
         {
-            var offset = 2 * transform.position - lookTarget.position;
-
-            transform.LookAt(offset);
+            if (this.name == "arrow")
+            {
+                lookTarget = GameObject.Find("/EndLvlPrefab(Clone)").GetComponent<Transform>();
+                var offset = transform.position - lookTarget.position;
+                transform.LookAt(lookTarget);
+                transform.Rotate(-90, 0, 0);
+            }
+            else
+            {
+                var offset = 2 * transform.position - lookTarget.position;
+                transform.LookAt(offset);
+            }
         }
 	}
 }
