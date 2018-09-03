@@ -49,14 +49,14 @@ public class ColliderTrigger : MonoBehaviour {
         {
             MeshRenderer mr = GameObject.Find("/EndLvlPrefab(Clone)").GetComponent<MeshRenderer>();
             Material[] mats = mr.materials;
-            mats[0] = (Material)AssetDatabase.LoadAssetAtPath("Assets/Resources/Materials/EndLvlMatActive.mat", typeof(Material));
+            mats[0] = Resources.Load<Material>("Materials/EndLvlMatActive");
             mr.materials = mats;
         }
         else
         {
             MeshRenderer mr = GameObject.Find("/EndLvlPrefab(Clone)").GetComponent<MeshRenderer>();
             Material[] mats = mr.materials;
-            mats[0] = (Material)AssetDatabase.LoadAssetAtPath("Assets/Resources/Materials/EndLvlMatInactive.mat", typeof(Material));
+            mats[0] = Resources.Load<Material>("Materials/EndLvlMatInactive");
             mr.materials = mats;
         }
     }
