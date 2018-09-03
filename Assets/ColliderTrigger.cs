@@ -15,7 +15,7 @@ public class ColliderTrigger : MonoBehaviour {
     public int falseTextPoints = -200;
     public int speed = 5;
 
-    public int pointsToActivateExit = 200;
+    public int pointsToActivateExit = 300;
 
     public float lvlTime = 60;
 
@@ -40,7 +40,7 @@ public class ColliderTrigger : MonoBehaviour {
 
     void showScore()
     {
-        UIOverlay.GetComponentInChildren<Text>().text = "Время: " + lvlTime.ToString("N2") +"сек. " + "Счёт: " + score.ToString();
+        UIOverlay.GetComponentInChildren<Text>().text = "Время: " + lvlTime.ToString("N2") +"сек. " + "Счёт: " + score.ToString() + "/" + pointsToActivateExit.ToString();
     }
 
     void checkScore()
@@ -95,40 +95,42 @@ public class ColliderTrigger : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "TrueObjectPrefab(Clone)")
+        if (!stop)
         {
-            score += truePoints;
-            Destroy(collision.gameObject);
-        }
-        else if (collision.gameObject.name == "ObstacleObjectPrefab(Clone)")
-        {
-            score += obstaclePoints;
-            Destroy(collision.gameObject);
-        }
-        else if (collision.gameObject.name == "FalseObjectPrefab(Clone)")
-        {
-            score += falsePoints;
-            Destroy(collision.gameObject);
-        }
-        else if (collision.gameObject.name == "EndLvlPrefab(Clone)")
-        {
-            if (score >= pointsToActivateExit)
+            if (collision.gameObject.name == "TrueObjectPrefab(Clone)")
             {
+                score += truePoints;
                 Destroy(collision.gameObject);
-                stop = true;
+            }
+            else if (collision.gameObject.name == "ObstacleObjectPrefab(Clone)")
+            {
+                score += obstaclePoints;
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.name == "FalseObjectPrefab(Clone)")
+            {
+                score += falsePoints;
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.name == "EndLvlPrefab(Clone)")
+            {
+                if (score >= pointsToActivateExit)
+                {
+                    Destroy(collision.gameObject);
+                    stop = true;
+                }
+            }
+            else if (collision.gameObject.name == "TrueTextObjectPrefab(Clone)")
+            {
+                score += trueTextPoints;
+                Destroy(collision.gameObject);
+            }
+            else if (collision.gameObject.name == "FalseTextObjectPrefab(Clone)")
+            {
+                score += falseTextPoints;
+                Destroy(collision.gameObject);
             }
         }
-        else if (collision.gameObject.name == "TrueTextObjectPrefab(Clone)")
-        {
-            score += trueTextPoints;
-            Destroy(collision.gameObject);
-        }
-        else if (collision.gameObject.name == "FalseTextObjectPrefab(Clone)")
-        {
-            score += falseTextPoints;
-            Destroy(collision.gameObject);
-        }
-
         showScore();
     }
 }
