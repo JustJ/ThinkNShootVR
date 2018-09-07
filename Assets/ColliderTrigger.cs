@@ -29,7 +29,21 @@ public class ColliderTrigger : MonoBehaviour {
         logText = GameObject.Find("/UIOver/EventLog").GetComponent<Text>();
         logText.text = "";
     }
-	
+
+    public void trueTextClicked()
+    {
+        score += trueTextPoints;
+        logText.text = "Верно! +" + trueTextPoints.ToString() + "\n";
+        logText.color = Color.green;
+    }
+
+    public void falseTextClicked()
+    {
+        score += falseTextPoints;
+        logText.text = "Неверно! " + falseTextPoints.ToString() + "\n";
+        logText.color = Color.red;
+    }
+
     public void addFalseTextScore()
     {
         score += falseTextPoints;
@@ -139,21 +153,6 @@ public class ColliderTrigger : MonoBehaviour {
                     stop = true;
                 }
             }
-            else if (collision.gameObject.name == "TrueTextObjectPrefab(Clone)")
-            {
-                score += trueTextPoints;
-                logText.text = "Верно! +" + trueTextPoints.ToString() + "\n";
-                logText.color = Color.green;
-                Destroy(collision.gameObject);
-            }
-            else if (collision.gameObject.name == "FalseTextObjectPrefab(Clone)")
-            {
-                score += falseTextPoints;
-                logText.text = "Неверно! " + falseTextPoints.ToString() + "\n";
-                logText.color = Color.red;
-                Destroy(collision.gameObject);
-            }
         }
-        showScore();
     }
 }
