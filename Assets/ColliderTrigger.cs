@@ -21,10 +21,14 @@ public class ColliderTrigger : MonoBehaviour {
 
     int score = 0;
     bool stop = false;
+    Text scoreText;
+    Text logText;
     // Use this for initialization
     void Start () {
-		
-	}
+        scoreText = GameObject.Find("/UIOver/TextScore").GetComponent<Text>();
+        logText = GameObject.Find("/UIOver/EventLog").GetComponent<Text>();
+        logText.text = "";
+    }
 	
     public void addFalseTextScore()
     {
@@ -40,7 +44,7 @@ public class ColliderTrigger : MonoBehaviour {
 
     void showScore()
     {
-        UIOverlay.GetComponentInChildren<Text>().text = "Время: " + lvlTime.ToString("N2") +"сек. " + "Счёт: " + score.ToString() + "/" + pointsToActivateExit.ToString();
+        scoreText.text = "Время: " + lvlTime.ToString("N2") + "сек.\n" + "Счёт: " + score.ToString() + "/" + pointsToActivateExit.ToString(); ;
     }
 
     void checkScore()
@@ -73,7 +77,7 @@ public class ColliderTrigger : MonoBehaviour {
 
     void moveForward()
     {
-        transform.Translate(speed * GameObject.Find("CenterEyeAnchor").transform.forward * Time.deltaTime);
+        GameObject.Find("OVRCameraRig").transform.Translate(speed * GameObject.Find("CenterEyeAnchor").transform.forward * Time.deltaTime);
     }
 
     // Update is called once per frame
@@ -88,6 +92,15 @@ public class ColliderTrigger : MonoBehaviour {
         }
         else
         {
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("TrueText"))
+            {
+                obj.SetActive(false);
+            }
+
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("FalseText"))
+            {
+                obj.SetActive(false);
+            }
             UIOverlay.GetComponentInChildren<Text>().text = "Игра завершена. Счёт: " + score.ToString();
         }
         
@@ -100,16 +113,22 @@ public class ColliderTrigger : MonoBehaviour {
             if (collision.gameObject.name == "TrueObjectPrefab(Clone)")
             {
                 score += truePoints;
+                logText.text = "Зелёный шар! +" + truePoints.ToString() + "\n";
+                logText.color = Color.green;
                 Destroy(collision.gameObject);
             }
             else if (collision.gameObject.name == "ObstacleObjectPrefab(Clone)")
             {
                 score += obstaclePoints;
+                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                logText.color = Color.yellow;
                 Destroy(collision.gameObject);
             }
             else if (collision.gameObject.name == "FalseObjectPrefab(Clone)")
             {
                 score += falsePoints;
+                logText.text = "Красный шар! " + falsePoints.ToString() + "\n";
+                logText.color = Color.red;
                 Destroy(collision.gameObject);
             }
             else if (collision.gameObject.name == "EndLvlPrefab(Clone)")
@@ -123,11 +142,15 @@ public class ColliderTrigger : MonoBehaviour {
             else if (collision.gameObject.name == "TrueTextObjectPrefab(Clone)")
             {
                 score += trueTextPoints;
+                logText.text = "Верно! +" + trueTextPoints.ToString() + "\n";
+                logText.color = Color.green;
                 Destroy(collision.gameObject);
             }
             else if (collision.gameObject.name == "FalseTextObjectPrefab(Clone)")
             {
                 score += falseTextPoints;
+                logText.text = "Неверно! " + falseTextPoints.ToString() + "\n";
+                logText.color = Color.red;
                 Destroy(collision.gameObject);
             }
         }
