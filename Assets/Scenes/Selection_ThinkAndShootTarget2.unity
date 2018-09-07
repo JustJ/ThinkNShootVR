@@ -2429,9 +2429,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1875736134}
-  - component: {fileID: 1875736137}
   - component: {fileID: 1875736136}
   - component: {fileID: 1875736135}
+  - component: {fileID: 1875736137}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -2446,7 +2446,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1875736133}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 11.1}
+  m_LocalPosition: {x: 0, y: -4.17, z: 3.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8152057}
@@ -2471,7 +2471,7 @@ MonoBehaviour:
   falseTextPoints: -200
   speed: 5
   pointsToActivateExit: 300
-  lvlTime: 5
+  lvlTime: 60
 --- !u!54 &1875736136
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2487,8 +2487,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!135 &1875736137
-SphereCollider:
+--- !u!136 &1875736137
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -2496,8 +2496,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 10
+  m_Height: 40
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1928684587
 GameObject:
