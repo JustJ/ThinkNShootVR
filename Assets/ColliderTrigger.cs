@@ -23,11 +23,13 @@ public class ColliderTrigger : MonoBehaviour {
     bool stop = false;
     Text scoreText;
     Text logText;
+    Vector3 colliderPos;
     // Use this for initialization
     void Start () {
         scoreText = GameObject.Find("/UIOver/TextScore").GetComponent<Text>();
         logText = GameObject.Find("/UIOver/EventLog").GetComponent<Text>();
         logText.text = "";
+        colliderPos = transform.position;
     }
 
     public void trueTextClicked()
@@ -96,6 +98,8 @@ public class ColliderTrigger : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+
+        transform.position = GameObject.Find("OVRCameraRig").transform.position + colliderPos;
 
         if (!stop)
         {
