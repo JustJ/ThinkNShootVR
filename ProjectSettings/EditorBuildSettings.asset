@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/main.unity
     guid: aaffd3596304a76439cf35f76e149abc
   - enabled: 1
@@ -14,10 +14,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Selection_CircledTargets.unity
     guid: e46f6a64d9f346d4aa57395c1f033060
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Selection_ThinkAndShootTarget.unity
     guid: 96e237f36213c0f45aa364963e1977cf
   m_configObjects: {}
