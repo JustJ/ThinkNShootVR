@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor;
-
+using UnityEngine.SceneManagement;
 
 public class ColliderTrigger : MonoBehaviour {
 
@@ -119,6 +118,19 @@ public class ColliderTrigger : MonoBehaviour {
             {
                 obj.SetActive(false);
             }
+
+            PlayerPrefs.SetInt("score", score);
+
+            if (score >= pointsToActivateExit)
+            {
+                SceneManager.LoadScene("Win_scene", LoadSceneMode.Single);
+            }
+            else
+            {
+                SceneManager.LoadScene("Loose_scene", LoadSceneMode.Single);
+            }
+
+
             UIOverlay.GetComponentInChildren<Text>().text = "Игра завершена. Счёт: " + score.ToString();
         }
         

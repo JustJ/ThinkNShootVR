@@ -2839,7 +2839,7 @@ MonoBehaviour:
   falseTextPoints: -200
   speed: 5
   pointsToActivateExit: 300
-  lvlTime: 130
+  lvlTime: 10
 --- !u!1 &1959080338
 GameObject:
   m_ObjectHideFlags: 0
