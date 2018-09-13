@@ -16,14 +16,16 @@ public class LookAtScript : MonoBehaviour {
 	void Update () {
 		if(lookTarget != null)
         {
-            if (this.name == "arrow" || this.name == "ArrowHolder")
+            if (this.name == "arrow_2")
             {
                 lookTarget = GameObject.Find("/EndLvlPrefab(Clone)").GetComponent<Transform>();
-                ovrCamera = GameObject.Find("/OVRCameraRig").GetComponent<Transform>();
-                transform.position = ovrCamera.position + startPos;
-                
                 transform.LookAt(lookTarget);
-                transform.Rotate(-90, 0, 0);
+                transform.Rotate(-270, 0, 0);
+                //ovrCamera = GameObject.Find("/OVRCameraRig").GetComponent<Transform>();
+                //transform.position = ovrCamera.position + startPos;
+
+                //transform.LookAt(lookTarget);
+                //transform.Rotate(-90, 0, 0);
             }
             else
             {
