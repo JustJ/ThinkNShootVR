@@ -153,8 +153,49 @@ public class ColliderTrigger : MonoBehaviour {
                 logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
+                                               
             }
-            else if (collision.gameObject.name == "FalseObjectPrefab(Clone)")
+
+
+            else if (collision.gameObject.name == "AsteroidElectric_Green3(Clone)")
+            {
+                score += obstaclePoints;
+                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                logText.color = Color.yellow;
+                Destroy(collision.gameObject);
+
+            }
+
+            else if (collision.gameObject.name == "AsteroidElectric_Violet5(Clone)")
+            {
+                score += obstaclePoints;
+                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                logText.color = Color.yellow;
+                Destroy(collision.gameObject);
+
+            }
+
+            else if (collision.gameObject.name == "AsteroidElectric_Yellow1(Clone)")
+            {
+                score += obstaclePoints;
+                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                logText.color = Color.yellow;
+                Destroy(collision.gameObject);
+
+            }
+
+            else if (collision.gameObject.name == "AsteroidElectric_Red1")
+            {
+                score += obstaclePoints;
+                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                logText.color = Color.yellow;
+                Destroy(collision.gameObject);
+
+            }
+
+
+
+            else if (collision.gameObject.name == "AsteroidElectric_Blue1(Clone)")
             {
                 score += falsePoints;
                 logText.text = "Красный шар! " + falsePoints.ToString() + "\n";

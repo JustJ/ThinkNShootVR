@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4652046965689566}
   - component: {fileID: 33496236880441306}
   - component: {fileID: 23233045904446158}
+  - component: {fileID: 135555099380700060}
   m_Layer: 0
   m_Name: AsteroidElectric_Violet5
   m_TagString: Untagged
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1254157168026454}
   m_Mesh: {fileID: 4300008, guid: e6958b1959e6e924ca8f5151bf649c01, type: 3}
+--- !u!135 &135555099380700060
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254157168026454}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.398026
+  m_Center: {x: -0.0000004768372, y: 0.03209591, z: -0.2076077}

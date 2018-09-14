@@ -7,7 +7,9 @@ public class GenerateObjectsToSphere : MonoBehaviour {
     public GameObject trueObjectPref;
     public GameObject falseObjectPref;
     public GameObject obstacleObjectPref;
-	public GameObject endLvlObjectPref;
+    public GameObject obstacleObjectPref2;
+    public GameObject obstacleObjectPref3;
+    public GameObject endLvlObjectPref;
 
     public float genAreaHeight = 2.2f;
     public float genAreaWidth = 2.2f;
@@ -33,16 +35,20 @@ public class GenerateObjectsToSphere : MonoBehaviour {
 
     }
 
-    public float obstacleProb = 0.2f;
-    public float trueObjProb = 0.4f;
-    public float falseObjProb = 0.4f;
+    public float obstacleProb = 0.1f;
+    public float obstacleProb2 = 0.1f;
+    public float obstacleProb3 = 0.1f;
+    public float trueObjProb = 0.35f;
+    public float falseObjProb = 0.35f;
     GameObject generateNextObject()
     {
         GameObject spawnedObject = null;
         float curObjectProb = Random.Range(0f, 1f);
 
         if (curObjectProb < obstacleProb) { spawnedObject = generateObject(obstacleObjectPref); }
-        else if (curObjectProb < obstacleProb + trueObjProb) { spawnedObject = generateObject(trueObjectPref); }
+        else if (curObjectProb < obstacleProb + obstacleProb2) { spawnedObject = generateObject(obstacleObjectPref2); }
+        else if (curObjectProb < obstacleProb + obstacleProb2 + obstacleProb3) { spawnedObject = generateObject(obstacleObjectPref3); }
+        else if (curObjectProb < obstacleProb + obstacleProb2 + obstacleProb3 + trueObjProb) { spawnedObject = generateObject(trueObjectPref); }
         else if (curObjectProb <= obstacleProb + trueObjProb + falseObjProb) { generateObject(falseObjectPref); }
 
         return spawnedObject;

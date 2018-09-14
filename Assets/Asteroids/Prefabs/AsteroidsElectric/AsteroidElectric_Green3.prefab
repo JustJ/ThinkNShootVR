@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4181604724417716}
   - component: {fileID: 33947483442337242}
   - component: {fileID: 23798182831510898}
+  - component: {fileID: 135473462838247430}
   m_Layer: 0
   m_Name: AsteroidElectric_Green3
   m_TagString: Untagged
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1179792590788948}
   m_Mesh: {fileID: 4300004, guid: e6958b1959e6e924ca8f5151bf649c01, type: 3}
+--- !u!135 &135473462838247430
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1179792590788948}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.0438207
+  m_Center: {x: 0.00000035762787, y: 0.0000002682209, z: -1.5146129e-28}
