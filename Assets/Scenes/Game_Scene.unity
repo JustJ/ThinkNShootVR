@@ -1536,11 +1536,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68058ba07ac0d604f8fa7b7da93dc90c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8569999
+      value: -0.652
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68058ba07ac0d604f8fa7b7da93dc90c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -39.581
+      value: 1.101
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68058ba07ac0d604f8fa7b7da93dc90c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1576,15 +1576,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68058ba07ac0d604f8fa7b7da93dc90c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.10000011
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68058ba07ac0d604f8fa7b7da93dc90c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.10000011
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68058ba07ac0d604f8fa7b7da93dc90c, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.099999994
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 68058ba07ac0d604f8fa7b7da93dc90c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 68058ba07ac0d604f8fa7b7da93dc90c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 68058ba07ac0d604f8fa7b7da93dc90c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68058ba07ac0d604f8fa7b7da93dc90c, type: 3}
@@ -1972,7 +1984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1115262156
 Transform:
   m_ObjectHideFlags: 0
@@ -2646,7 +2658,7 @@ MonoBehaviour:
   falseTextPoints: -200
   speed: 5
   pointsToActivateExit: 300
-  lvlTime: 100
+  lvlTime: 20
 --- !u!54 &1732377965
 Rigidbody:
   m_ObjectHideFlags: 0

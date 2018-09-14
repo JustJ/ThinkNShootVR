@@ -20,13 +20,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Selection_ThinkAndShootTarget.unity
     guid: 96e237f36213c0f45aa364963e1977cf
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Game_Scene.unity
+    guid: 524ed7fbbd3171d45bf76aeede40ccc3
+  - enabled: 1
     path: Assets/Scenes/Win_scene.unity
     guid: 288f5f9c52b5f484f915b603511622d7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Loose_scene.unity
     guid: fffd79ed47413fa4eb3d4744797373da
-  - enabled: 1
-    path: Assets/Scenes/Game Scene.unity
-    guid: 524ed7fbbd3171d45bf76aeede40ccc3
   m_configObjects: {}
