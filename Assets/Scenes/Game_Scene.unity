@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12045214, g: 0.0038446707, b: 0.00038080302, a: 1}
+  m_IndirectSpecularColor: {r: 0.119444996, g: 0.0036860313, b: 0.0004829996, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -450,11 +450,11 @@ MonoBehaviour:
   genAreaHeight: 20
   genAreaWidth: 20
   maxObjectsToEndLevel: 200
-  obstacleProb: 0.2
+  obstacleProb: 0.1
   obstacleProb2: 0.1
   obstacleProb3: 0.1
-  trueObjProb: 0.4
-  falseObjProb: 0.4
+  trueObjProb: 0.35
+  falseObjProb: 0.35
 --- !u!1 &386682043
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +677,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4008274476835466, guid: 99741bfa84128e8488b05439fe7331c6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 33.5
+      value: 32.11
       objectReference: {fileID: 0}
     - target: {fileID: 4008274476835466, guid: 99741bfa84128e8488b05439fe7331c6, type: 2}
       propertyPath: m_LocalPosition.z
@@ -808,7 +808,7 @@ Transform:
   m_GameObject: {fileID: 643687762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 80, y: 80, z: 80}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children: []
   m_Father: {fileID: 1115262156}
   m_RootOrder: 0
@@ -955,7 +955,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1732377964}
-        m_MethodName: falseTextClicked
+        m_MethodName: trueTextClicked
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1188908846}
@@ -1686,7 +1686,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115262155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 643687763}
@@ -1710,7 +1710,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4008274476835466, guid: 99741bfa84128e8488b05439fe7331c6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -42.1
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4008274476835466, guid: 99741bfa84128e8488b05439fe7331c6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2353,7 +2353,7 @@ MonoBehaviour:
   falseTextPoints: -200
   speed: 5
   pointsToActivateExit: 300
-  lvlTime: 20
+  lvlTime: 30
   audioSource: {fileID: 1732377966}
   greenSound: {fileID: 8300000, guid: 4c077806c39666a41bc6eb00406c53a2, type: 3}
   redSound: {fileID: 8300000, guid: 14bb3022ceba55147b1d5d15e1d86f1b, type: 3}
