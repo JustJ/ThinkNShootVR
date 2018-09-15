@@ -46,6 +46,7 @@ public class ColliderTrigger : MonoBehaviour {
     {
         string timeString = System.DateTime.Now.ToString("HH-mm-ss dd MMMM, yyyy");
         logFilePath = Application.persistentDataPath + "/LogFile - " + timeString + ".txt";
+       
         try
         {
             File.Create(logFilePath);
@@ -59,9 +60,9 @@ public class ColliderTrigger : MonoBehaviour {
 
     public void trueTextClicked(TextMeshProUGUI textObject)
     {
-        string textFromObject = textObject.text + "\n";
+        string textFromObject = textObject.text + "\r\n";
         score += trueTextPoints;
-        logText.text = "Верно! +" + trueTextPoints.ToString() + "\n";
+        logText.text = "Верно! +" + trueTextPoints.ToString() + "\r\n";
         File.AppendAllText(logFilePath, logText.text);
         logText.color = Color.green;
         File.AppendAllText(logFilePath, textFromObject);
@@ -69,9 +70,9 @@ public class ColliderTrigger : MonoBehaviour {
 
     public void falseTextClicked(TextMeshProUGUI textObject)
     {
-        string textFromObject = textObject.text + "\n";
+        string textFromObject = textObject.text + "\r\n";
         score += falseTextPoints;
-        logText.text = "Неверно! " + falseTextPoints.ToString() + "\n";
+        logText.text = "Неверно! " + falseTextPoints.ToString() + "\r\n";
         File.AppendAllText(logFilePath, logText.text);
         logText.color = Color.red;
         File.AppendAllText(logFilePath, textFromObject);
@@ -172,19 +173,50 @@ public class ColliderTrigger : MonoBehaviour {
     {
         if (!stop)
         {
-            if (collision.gameObject.name == "TrueObjectPrefab(Clone)")
+            if (collision.gameObject.name == "Book9(Clone)")
             {
                 score += truePoints;
-                logText.text = "Зелёный шар! +" + truePoints.ToString() + "\n";
+                logText.text = "Зелёный шар! +" + truePoints.ToString() + "\r\n";
                 File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.green;
                 Destroy(collision.gameObject);
                 audioSource.PlayOneShot(greenSound);
             }
+
+            else if (collision.gameObject.name == "Book6(Clone)")
+            {
+                score += truePoints;
+                logText.text = "Зелёный шар! +" + truePoints.ToString() + "\r\n";
+                File.AppendAllText(logFilePath, logText.text);
+                logText.color = Color.green;
+                Destroy(collision.gameObject);
+                audioSource.PlayOneShot(greenSound);
+            }
+
+            else if (collision.gameObject.name == "Book4(Clone)")
+            {
+                score += truePoints;
+                logText.text = "Зелёный шар! +" + truePoints.ToString() + "\r\n";
+                File.AppendAllText(logFilePath, logText.text);
+                logText.color = Color.green;
+                Destroy(collision.gameObject);
+                audioSource.PlayOneShot(greenSound);
+            }
+
+            else if (collision.gameObject.name == "Book8(Clone)")
+            {
+                score += truePoints;
+                logText.text = "Зелёный шар! +" + truePoints.ToString() + "\r\n";
+                File.AppendAllText(logFilePath, logText.text);
+                logText.color = Color.green;
+                Destroy(collision.gameObject);
+                audioSource.PlayOneShot(greenSound);
+            }
+
             else if (collision.gameObject.name == "ObstacleObjectPrefab(Clone)")
             {
                 score += obstaclePoints;
-                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\r\n";
                 File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
@@ -195,7 +227,7 @@ public class ColliderTrigger : MonoBehaviour {
             else if (collision.gameObject.name == "AsteroidElectric_Green3(Clone)")
             {
                 score += obstaclePoints;
-                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\r\n";
                 File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
@@ -205,7 +237,7 @@ public class ColliderTrigger : MonoBehaviour {
             else if (collision.gameObject.name == "AsteroidElectric_Violet5(Clone)")
             {
                 score += obstaclePoints;
-                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\r\n";
                 File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
@@ -215,7 +247,7 @@ public class ColliderTrigger : MonoBehaviour {
             else if (collision.gameObject.name == "AsteroidElectric_Yellow1(Clone)")
             {
                 score += obstaclePoints;
-                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\r\n";
                 File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
@@ -225,7 +257,7 @@ public class ColliderTrigger : MonoBehaviour {
             else if (collision.gameObject.name == "AsteroidElectric_Red1")
             {
                 score += obstaclePoints;
-                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                logText.text = "Препятствие! " + obstaclePoints.ToString() + "\r\n";
                 File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
@@ -237,7 +269,7 @@ public class ColliderTrigger : MonoBehaviour {
             else if (collision.gameObject.name == "AsteroidElectric_Blue1(Clone)")
             {
                 score += falsePoints;
-                logText.text = "Красный шар! " + falsePoints.ToString() + "\n";
+                logText.text = "Красный шар! " + falsePoints.ToString() + "\r\n";
                 File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.red;
                 Destroy(collision.gameObject);

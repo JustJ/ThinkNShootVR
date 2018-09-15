@@ -5,6 +5,9 @@ using UnityEngine;
 public class GenerateObjectsToSphere : MonoBehaviour {
 
     public GameObject trueObjectPref;
+    public GameObject trueObjectPref2;
+    public GameObject trueObjectPref3;
+    public GameObject trueObjectPref4;
     public GameObject falseObjectPref;
     public GameObject obstacleObjectPref;
     public GameObject obstacleObjectPref2;
@@ -38,7 +41,10 @@ public class GenerateObjectsToSphere : MonoBehaviour {
     public float obstacleProb = 0.1f;
     public float obstacleProb2 = 0.1f;
     public float obstacleProb3 = 0.1f;
-    public float trueObjProb = 0.35f;
+    public float trueObjProb = 0.11f;
+    public float trueObjProb2 = 0.11f;
+    public float trueObjProb3 = 0.11f;
+    public float trueObjProb4 = 0.12f;
     public float falseObjProb = 0.35f;
     GameObject generateNextObject()
     {
@@ -49,7 +55,10 @@ public class GenerateObjectsToSphere : MonoBehaviour {
         else if (curObjectProb < obstacleProb + obstacleProb2) { spawnedObject = generateObject(obstacleObjectPref2); }
         else if (curObjectProb < obstacleProb + obstacleProb2 + obstacleProb3) { spawnedObject = generateObject(obstacleObjectPref3); }
         else if (curObjectProb < obstacleProb + obstacleProb2 + obstacleProb3 + trueObjProb) { spawnedObject = generateObject(trueObjectPref); }
-        else if (curObjectProb <= obstacleProb + trueObjProb + falseObjProb) { generateObject(falseObjectPref); }
+        else if (curObjectProb < obstacleProb + obstacleProb2 + obstacleProb3 + trueObjProb + trueObjProb2) { spawnedObject = generateObject(trueObjectPref2); }
+        else if (curObjectProb < obstacleProb + obstacleProb2 + obstacleProb3 + trueObjProb + trueObjProb2 + trueObjProb3) { spawnedObject = generateObject(trueObjectPref3); }
+        else if (curObjectProb < obstacleProb + obstacleProb2 + obstacleProb3 + trueObjProb + trueObjProb2 + trueObjProb3 + +trueObjProb4) { spawnedObject = generateObject(trueObjectPref4); }
+        else if (curObjectProb <= obstacleProb + obstacleProb2 + obstacleProb3 + trueObjProb + trueObjProb2 + falseObjProb) { generateObject(falseObjectPref); }
 
         return spawnedObject;
     }
