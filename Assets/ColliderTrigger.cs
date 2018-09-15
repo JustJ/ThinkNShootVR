@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ColliderTrigger : MonoBehaviour {
 
@@ -18,31 +20,61 @@ public class ColliderTrigger : MonoBehaviour {
 
     public float lvlTime = 60;
 
+    public AudioSource audioSource;
+    public AudioClip greenSound;
+    public AudioClip redSound;
+    public AudioClip obstacleSound;
+
     int score = 0;
     bool stop = false;
     Text scoreText;
     Text logText;
     Vector3 colliderPos;
+    string logFilePath;
+
     // Use this for initialization
     void Start () {
         scoreText = GameObject.Find("/UIOver/TextScore").GetComponent<Text>();
         logText = GameObject.Find("/UIOver/EventLog").GetComponent<Text>();
         logText.text = "";
         colliderPos = transform.position;
+
+        createLogFile();
     }
 
-    public void trueTextClicked()
+    void createLogFile()
     {
+        string timeString = System.DateTime.Now.ToString("HH-mm-ss dd MMMM, yyyy");
+        logFilePath = Application.persistentDataPath + "/LogFile - " + timeString + ".txt";
+        try
+        {
+            File.Create(logFilePath);
+        }
+        catch(System.Exception e)
+        {
+            Debug.Log(e.Message);
+        }
+
+    }
+
+    public void trueTextClicked(TextMeshProUGUI textObject)
+    {
+        string textFromObject = textObject.text + "\n";
         score += trueTextPoints;
         logText.text = "Верно! +" + trueTextPoints.ToString() + "\n";
+        File.AppendAllText(logFilePath, logText.text);
         logText.color = Color.green;
+        File.AppendAllText(logFilePath, textFromObject);
     }
 
-    public void falseTextClicked()
+    public void falseTextClicked(TextMeshProUGUI textObject)
     {
+        string textFromObject = textObject.text + "\n";
         score += falseTextPoints;
         logText.text = "Неверно! " + falseTextPoints.ToString() + "\n";
+        File.AppendAllText(logFilePath, logText.text);
         logText.color = Color.red;
+        File.AppendAllText(logFilePath, textFromObject);
     }
 
     public void addFalseTextScore()
@@ -144,16 +176,19 @@ public class ColliderTrigger : MonoBehaviour {
             {
                 score += truePoints;
                 logText.text = "Зелёный шар! +" + truePoints.ToString() + "\n";
+                File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.green;
                 Destroy(collision.gameObject);
+                audioSource.PlayOneShot(greenSound);
             }
             else if (collision.gameObject.name == "ObstacleObjectPrefab(Clone)")
             {
                 score += obstaclePoints;
                 logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
-                                               
+                audioSource.PlayOneShot(obstacleSound);
             }
 
 
@@ -161,36 +196,40 @@ public class ColliderTrigger : MonoBehaviour {
             {
                 score += obstaclePoints;
                 logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
-
+                audioSource.PlayOneShot(obstacleSound);
             }
 
             else if (collision.gameObject.name == "AsteroidElectric_Violet5(Clone)")
             {
                 score += obstaclePoints;
                 logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
-
+                audioSource.PlayOneShot(obstacleSound);
             }
 
             else if (collision.gameObject.name == "AsteroidElectric_Yellow1(Clone)")
             {
                 score += obstaclePoints;
                 logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
-
+                audioSource.PlayOneShot(obstacleSound);
             }
 
             else if (collision.gameObject.name == "AsteroidElectric_Red1")
             {
                 score += obstaclePoints;
                 logText.text = "Препятствие! " + obstaclePoints.ToString() + "\n";
+                File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.yellow;
                 Destroy(collision.gameObject);
-
+                audioSource.PlayOneShot(obstacleSound);
             }
 
 
@@ -199,8 +238,10 @@ public class ColliderTrigger : MonoBehaviour {
             {
                 score += falsePoints;
                 logText.text = "Красный шар! " + falsePoints.ToString() + "\n";
+                File.AppendAllText(logFilePath, logText.text);
                 logText.color = Color.red;
                 Destroy(collision.gameObject);
+                audioSource.PlayOneShot(redSound);
             }
             else if (collision.gameObject.name == "EndLvlPrefab(Clone)")
             {

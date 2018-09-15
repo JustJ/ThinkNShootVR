@@ -82,7 +82,7 @@ public class GenerateTextObjects : MonoBehaviour {
 
     GameObject generateObject(GameObject obj)
     {
-        Vector3 curPos = new Vector3(Random.Range(-genAreaWidth, genAreaWidth), Random.Range(-genAreaHeight, genAreaHeight), Random.Range(-genAreaHeight, genAreaHeight) + 5);
+        Vector3 curPos = new Vector3(Random.Range(-genAreaWidth, genAreaWidth), Random.Range(-genAreaHeight, genAreaHeight), Random.Range(-genAreaHeight, genAreaHeight) + 65);
         lastGenPos = curPos;
         GameObject ret = Instantiate(obj, curPos, Quaternion.identity);
         ret.transform.rotation = Quaternion.AngleAxis(Random.Range(-180f, 180f), Vector3.up);

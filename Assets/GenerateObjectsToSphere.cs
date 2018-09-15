@@ -56,7 +56,7 @@ public class GenerateObjectsToSphere : MonoBehaviour {
 
     GameObject generateObject(GameObject obj)
     {
-        Vector3 curPos = new Vector3(Random.Range(-genAreaWidth, genAreaWidth), Random.Range(-genAreaHeight, genAreaHeight), Random.Range(-genAreaHeight, genAreaHeight) + 5);
+        Vector3 curPos = new Vector3(Random.Range(-genAreaWidth, genAreaWidth), Random.Range(-genAreaHeight, genAreaHeight), Random.Range(-genAreaHeight, genAreaHeight) + 65);
         lastGenPos = curPos;
         return Instantiate(obj, curPos, Quaternion.identity);
     }
